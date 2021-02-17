@@ -26,7 +26,7 @@ function App() {
         </div>
       </div>
       <a href="https://github.com/mong89/my-weather-app-project-react.git">
-        Open source code{" "}
+        Open source code
       </a>{" "}
       by Monika Gawińska
     </div>
