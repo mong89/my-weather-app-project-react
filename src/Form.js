@@ -9,7 +9,7 @@ export default function Form() {
           placeholder="Enter a city"
           autoComplete="off"
           autoFocus="on"
-        />
+        />{" "}
         <input type="submit" value="search" class="btn btn-primary" />
       </form>
     </div>
