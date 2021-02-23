@@ -5,7 +5,7 @@ import Form from "./Form";
 import Date from "./Date";
 import City from "./City";
 import Temperature from "./Temperature";
-import Background from "./src/background_image.jpg";
+import Background from "./background_image.jpg";
 
 import "./App.css";
 
@@ -14,8 +14,17 @@ export default function App() {
     <div className="App">
       <div className="container" style={{ width: 600 }}>
         <div className="my-weather-app-wrapper">
-          <div className="my-weather-app">
-            <div style={{ backgroundImage: `url(${Background})` }}>
+          {" "}
+          <div
+            className="app-background"
+            style={{
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              backgroundImage: `url(${Background})`,
+              borderRadius: "15px",
+            }}
+          >
+            <div className="my-weather-app">
               MyWeather App
               <Form />
               <h1>
