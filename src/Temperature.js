@@ -26,7 +26,7 @@ export default function Temperature() {
               Wind: <span className="wind"></span>25 km/h
             </li>
           </ul>
-          <p2 className="quote"></p2>
+          <p2 className="quote"> What a lovely weather!</p2>
         </div>
       </div>
     </div>
