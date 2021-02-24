@@ -1,41 +1,26 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "bootstrap/dist/css/bootstrap.css";
-import Form from "./Form";
-import Date from "./Date";
-import City from "./City";
-import Temperature from "./Temperature";
+import Weather from "./Weather";
 import Background from "./background_image.jpg";
-
 import "./App.css";
 
 export default function App() {
   return (
-    <div className="App">
-      <div className="container" style={{ width: 600 }}>
-        <div className="my-weather-app-wrapper">
-          {" "}
-          <div
-            className="app-background"
-            style={{
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-              backgroundImage: `url(${Background})`,
-              borderRadius: "15px",
-            }}
-          >
-            <div className="my-weather-app">
-              MyWeather App
-              <Form />
-              <h1>
-                <Date />
-              </h1>
-              <h2>
-                <City />
-              </h2>
-              <Temperature />
-            </div>
-          </div>
+    <div className="container" style={{ width: 600 }}>
+      {" "}
+      <div className="my-weather-app-wrapper">
+        <div
+          className="app-background"
+          style={{
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundImage: `url(${Background})`,
+            borderRadius: "15px",
+          }}
+        ></div>
+        <div className="weather-content">
+          <Weather />
         </div>
       </div>
       <footer>
