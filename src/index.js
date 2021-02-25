@@ -2,7 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "bootstrap/dist/css/bootstrap.css";
 import Weather from "./Weather";
-import Background from "./background_image.jpg";
 import "./App.css";
 
 export default function App() {
@@ -10,15 +9,6 @@ export default function App() {
     <div className="container" style={{ width: 600 }}>
       {" "}
       <div className="my-weather-app-wrapper">
-        <div
-          className="app-background"
-          style={{
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            backgroundImage: `url(${Background})`,
-            borderRadius: "15px",
-          }}
-        ></div>
         <div className="weather-content">
           <Weather />
         </div>
