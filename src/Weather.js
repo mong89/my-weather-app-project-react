@@ -1,13 +1,14 @@
 import React, { useState } from "react";
-
 import WeatherSearch from "./WeatherSearch";
 import axios from "axios";
 
 export default function Weather(props) {
+  console.log(props);
   const [weatherData, setWeatherData] = useState({ ready: false });
-  const [city, setCity] = useState(props.city);
+  let [city, setCity] = useState(props.city);
 
   function handleResponse(response) {
+    console.log(response);
     setWeatherData({
       ready: true,
       date: new Date(response.data.dt * 1000),
@@ -20,12 +21,6 @@ export default function Weather(props) {
     });
   }
 
-  function search() {
-    const apiKey = "cbaf782c437236cdb5aa2956ff503d4d";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-    axios.get(apiUrl).then(handleResponse);
-  }
-
   function handleSubmit(event) {
     event.preventDefault();
     search();
@@ -33,6 +28,12 @@ export default function Weather(props) {
 
   function handleCityChange(event) {
     setCity(event.target.value);
+  }
+
+  function search() {
+    const apiKey = "cbaf782c437236cdb5aa2956ff503d4d";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(handleResponse);
   }
 
   if (weatherData.ready) {
