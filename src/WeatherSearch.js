@@ -1,5 +1,7 @@
 import React from "react";
 import WeatherDate from "./WeatherDate";
+import WeatherIcons from "./WeatherIcons";
+import WeatherTemperature from "./WeatherTemperature";
 
 export default function WeatherSearch(props) {
   return (
@@ -16,16 +18,11 @@ export default function WeatherSearch(props) {
           </h2>
         </div>
         <div className="temperature-content">
-          <span className="temperature">
-            <p>{Math.round(props.data.temperature)}</p>
-          </span>
-          <span className="temperature-unit">
-            <a href="#">°C </a>|<a href="#">°F</a>
-          </span>
-          <img
-            className="icon"
-            src="../Documents/SheCodes/my-weather-app-project-react/src/weather_icons"
-          />
+          <WeatherTemperature celsius={props.data.temperature} />
+
+          <div className="icons">
+            <WeatherIcons type={props.data.icon} />
+          </div>
           <br />
           <br />
           <p1>

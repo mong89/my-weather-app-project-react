@@ -3,9 +3,8 @@ import WeatherSearch from "./WeatherSearch";
 import axios from "axios";
 
 export default function Weather(props) {
-  console.log(props);
   const [weatherData, setWeatherData] = useState({ ready: false });
-  let [city, setCity] = useState(props.city);
+  const [city, setCity] = useState(props.city);
 
   function handleResponse(response) {
     console.log(response);
@@ -14,11 +13,12 @@ export default function Weather(props) {
       date: new Date(response.data.dt * 1000),
       temperature: response.data.main.temp,
       city: response.data.name,
-      icon: `{response.data.weather[0].description}`,
+      icon: response.data.weather[0].description,
       description: response.data.weather[0].description,
       wind: response.data.wind.speed,
       humidity: response.data.main.humidity,
     });
+    // let img = document.getElementsByClassName("icon");
   }
 
   function handleSubmit(event) {
