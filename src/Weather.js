@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import WeatherSearch from "./WeatherSearch";
+import WeatherForecast from "./WeatherForecast";
 import axios from "axios";
 
 export default function Weather(props) {
@@ -18,7 +19,6 @@ export default function Weather(props) {
       wind: response.data.wind.speed,
       humidity: response.data.main.humidity,
     });
-    // let img = document.getElementsByClassName("icon");
   }
 
   function handleSubmit(event) {
@@ -53,6 +53,7 @@ export default function Weather(props) {
           </form>
         </div>
         <WeatherSearch data={weatherData} />
+        <WeatherForecast city={weatherData.city} />
       </div>
     );
   } else {

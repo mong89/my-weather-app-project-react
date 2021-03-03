@@ -25,9 +25,7 @@ export default function WeatherSearch(props) {
           </div>
           <br />
           <br />
-          <p1>
-            <span className="description">{props.data.description}</span>
-          </p1>
+          <span className="description">{props.data.description}</span>
         </div>
       </div>
       <div className="col-5">

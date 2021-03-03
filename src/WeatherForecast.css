@@ -1,0 +1,20 @@
+.WeatherForecastPreview col {
+  display: flex;
+  text-align: center;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.ForecastHour {
+  text-align: center;
+  font-size: 13px;
+  margin-top: 30px;
+  justify-content: space-around;
+}
+
+.ForecastTemp {
+  text-align: center;
+  margin-left: 15px;
+  font-size: 13px;
+  justify-content: space-around;
+}
