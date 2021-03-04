@@ -2,6 +2,7 @@ import React from "react";
 import WeatherDate from "./WeatherDate";
 import WeatherIcons from "./WeatherIcons";
 import WeatherTemperature from "./WeatherTemperature";
+import WeatherQuote from "./WeatherQuote";
 
 export default function WeatherSearch(props) {
   return (
@@ -39,7 +40,9 @@ export default function WeatherSearch(props) {
             {props.data.wind} km/h
           </li>
         </ul>
-        <p2 className="quote"> What a lovely weather!</p2>
+        <span className="quote">
+          <WeatherQuote data={props.data.temperature} />
+        </span>
       </div>
     </div>
   );
