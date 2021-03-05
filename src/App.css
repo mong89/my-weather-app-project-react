@@ -3,9 +3,10 @@ body {
   font-family: "Courier New", Courier, monospace;
   font-size: 13px;
 }
+
 .my-weather-app-wrapper {
-  margin: 0 auto;
   max-width: 600px;
+  margin: 0 auto;
 }
 
 .my-weather-app {
@@ -14,7 +15,7 @@ body {
   border: 1px solid gray;
   border-radius: 15px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  background-image: url("../src/background_image.jpg");
+  background-image: url("../src/background_day.jpg");
   background-size: cover;
 }
 .form {
@@ -47,7 +48,9 @@ h1 {
   margin-top: 20px;
   margin-right: 30px;
 }
-
+.city {
+  white-space: nowrap;
+}
 p {
   float: left;
   font-size: 35px;
@@ -61,13 +64,6 @@ p {
   float: left;
 }
 
-.description {
-  display: flex;
-  margin-top: 38px;
-  font-size: 15px;
-  flex-direction: row;
-}
-
 img {
   height: 50px;
   margin-left: 20px;
@@ -76,10 +72,16 @@ img {
 }
 
 ul {
-  margin-top: 120px;
+  margin-top: 100px;
   line-height: 18px;
 }
 
+.description {
+  display: flex;
+  margin-top: 38px;
+  font-size: 15px;
+  flex-direction: row;
+}
 .quote {
   display: flex;
   font-size: 15px;
