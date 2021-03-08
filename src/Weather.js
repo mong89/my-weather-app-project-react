@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import WeatherSearch from "./WeatherSearch";
 import WeatherForecast from "./WeatherForecast";
 import axios from "axios";
+import background_night from "./background_night.jpg";
+import background_day from "./background_day.jpg";
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
@@ -36,25 +38,54 @@ export default function Weather(props) {
   }
 
   if (weatherData.ready) {
-    return (
-      <div className="my-weather-app">
-        MyWeather App
-        <div className="form">
-          <form className="search-form" onSubmit={handleSubmit}>
-            <input
-              type="text"
-              placeholder="Enter a city"
-              autoComplete="off"
-              autoFocus="on"
-              onChange={handleCityChange}
-            />{" "}
-            <input type="submit" value="search" className="btn btn-primary" />
-          </form>
+    const hours = weatherData.date.getHours();
+    if (hours < 5 || hours > 20) {
+      return (
+        <div
+          className="my-weather-app"
+          style={{ backgroundImage: `url(${background_night})` }}
+        >
+          MyWeather App
+          <div className="form">
+            <form className="search-form" onSubmit={handleSubmit}>
+              <input
+                type="text"
+                placeholder="Enter a city"
+                autoComplete="off"
+                autoFocus="on"
+                onChange={handleCityChange}
+              />{" "}
+              <input type="submit" value="search" className="btn btn-primary" />
+            </form>
+          </div>
+          <WeatherSearch data={weatherData} />
+          <WeatherForecast city={weatherData.city} />
         </div>
-        <WeatherSearch data={weatherData} />
-        <WeatherForecast city={weatherData.city} />
-      </div>
-    );
+      );
+    } else {
+      return (
+        <div
+          className="my-weather-app"
+          style={{ backgroundImage: `url(${background_day})` }}
+        >
+          MyWeather App
+          <div className="form">
+            <form className="search-form" onSubmit={handleSubmit}>
+              <input
+                type="text"
+                placeholder="Enter a city"
+                autoComplete="off"
+                autoFocus="on"
+                onChange={handleCityChange}
+              />{" "}
+              <input type="submit" value="search" className="btn btn-primary" />
+            </form>
+          </div>
+          <WeatherSearch data={weatherData} />
+          <WeatherForecast city={weatherData.city} />
+        </div>
+      );
+    }
   } else {
     search();
     return "Loading...";
