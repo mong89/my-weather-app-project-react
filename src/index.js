@@ -3,7 +3,6 @@ import ReactDOM from "react-dom";
 import "bootstrap/dist/css/bootstrap.css";
 import Weather from "./Weather";
 import "./App.css";
-import AppBackground from "./AppBackground";
 
 export default function App() {
   return (

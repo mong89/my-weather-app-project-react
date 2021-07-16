@@ -43,7 +43,7 @@ export default function Weather(props) {
       return (
         <div
           className="my-weather-app"
-          style={{ backgroundImage: `url(${background_night})` }}
+          style={{ backgroundImage: `url(${background_night})`, color:'white' }}
         >
           MyWeather App
           <div className="form">
